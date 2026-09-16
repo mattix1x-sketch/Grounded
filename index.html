@@ -31,38 +31,39 @@
     color: var(--ink);
     font-family: Arial, Helvetica, sans-serif;
     background: var(--bg);
+    font-size: 16px;
   }
 
   a{ color: var(--blue); }
 
-  /* ---------- top nav ---------- */
   .topnav{
     width:100%;
-    max-width: 460px;
+    max-width: 480px;
     display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
     align-items:center;
     justify-content:space-between;
     padding: 4px 0 18px;
     border-bottom: 1px solid var(--line);
-    margin-bottom: 20px;
+    margin-bottom: 26px;
   }
   .topnav-title{
     font-weight: 800;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: var(--ink);
-    text-decoration:none;
-    cursor:pointer;
     background:none;
     border:none;
     font-family: inherit;
     padding:0;
+    cursor:pointer;
   }
-  .topnav-links{ display:flex; gap: 14px; }
+  .topnav-links{ display:flex; flex-wrap: wrap; gap: 16px; }
   .topnav-link{
     background:none;
     border:none;
     font-family: inherit;
-    font-size: 0.82rem;
+    font-size: 0.86rem;
     font-weight: 700;
     color: var(--blue);
     cursor:pointer;
@@ -76,38 +77,43 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    padding: 24px 16px 50px;
+    padding: 26px 18px 56px;
   }
 
   .screen{
     width:100%;
-    max-width: 420px;
+    max-width: 440px;
     display:none;
     flex-direction:column;
     align-items:center;
   }
   .screen.active{ display:flex; }
+  #screen-landing.active{
+    justify-content:center;
+    min-height: 76vh;
+  }
 
   .panel{
     width:100%;
     background: var(--bg);
     border: 1px solid var(--line);
-    border-radius: 4px;
-    padding: 20px 18px;
+    border-radius: 6px;
+    padding: 24px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   }
 
-  /* ---------- buttons ---------- */
   .btn{
     appearance:none;
     cursor:pointer;
     font-family: inherit;
     font-weight: 700;
-    font-size: 0.98rem;
+    font-size: 1.05rem;
     color: #FFFFFF;
     background: var(--blue);
     border: 1px solid var(--blue);
-    border-radius: 4px;
-    padding: 11px 22px;
+    border-radius: 6px;
+    padding: 14px 28px;
+    box-shadow: 0 3px 8px rgba(27,79,219,0.25);
   }
   .btn:hover{ opacity: 0.88; }
   .btn:active{ opacity: 0.7; }
@@ -117,64 +123,71 @@
     background: #FFFFFF;
     color: var(--ink);
     border: 1px solid var(--ink);
+    box-shadow:none;
   }
 
-  /* ---------- language row ---------- */
   .lang-row{
     display:flex;
-    gap: 8px;
-    margin-bottom: 22px;
+    gap: 10px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    justify-content:center;
   }
   .lang-btn{
     appearance:none;
     cursor:pointer;
-    font-size: 1.15rem;
-    line-height: 1;
     background: #FFFFFF;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    padding: 6px 9px;
+    border: 2px solid var(--line);
+    border-radius: 5px;
+    padding: 3px;
+    width: 40px;
+    height: 27px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
-  .lang-btn.active{ border-color: var(--blue); border-width: 2px; }
+  .lang-btn svg{ width:100%; height:100%; display:block; border-radius: 2px; }
+  .lang-btn.active{ border-color: var(--blue); }
   .lang-btn:focus-visible{ outline: 2px solid var(--blue); outline-offset: 2px; }
 
-  /* ---------- Landing ---------- */
   .hero{
-    font-size: 2.3rem;
-    margin: 0 0 6px;
+    font-size: 2.9rem;
+    margin: 0 0 10px;
     text-align:center;
     font-weight: 800;
     color: var(--ink);
   }
   p.lede{
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1.02rem;
+    line-height: 1.55;
     text-align:center;
-    max-width: 340px;
-    margin: 0 0 24px;
+    max-width: 360px;
+    margin: 0 0 30px;
     color: var(--muted);
   }
   .landing-footnote{
-    margin-top: 16px;
-    font-size: 0.7rem;
+    margin-top: 22px;
+    font-size: 0.74rem;
     text-align:center;
     color: var(--muted);
   }
   .landing-secondary{
-    margin-top: 22px;
-    font-size: 0.82rem;
+    margin-top: 26px;
+    font-size: 0.88rem;
   }
 
-  /* ---------- Quiz ---------- */
-  .quiz-top{ width:100%; margin-bottom: 16px; }
+  .quiz-top{ width:100%; margin-bottom: 20px; }
   .quiz-nav-row{
     display:flex; justify-content:space-between; align-items:center;
     margin-bottom: 10px;
+    gap: 10px;
   }
   .back-link{
     background:none; border:none; font-family: inherit;
-    font-size: 0.82rem; font-weight: 700; color: var(--blue);
+    font-size: 0.86rem; font-weight: 700; color: var(--blue);
     cursor:pointer; padding:0; text-decoration: underline;
+    white-space: nowrap;
   }
   .back-link[disabled]{ visibility: hidden; }
   .progress-label{
@@ -182,10 +195,11 @@
     font-weight: 700;
     color: var(--muted);
     letter-spacing: 0.04em;
+    white-space: nowrap;
   }
   .progress-track{
     width:100%;
-    height: 6px;
+    height: 7px;
     background: var(--line);
     border-radius: 999px;
     overflow:hidden;
@@ -198,27 +212,35 @@
   }
 
   .q-text{
-    font-size: 1.15rem;
-    line-height: 1.35;
-    margin: 6px 0 20px;
+    font-size: 1.22rem;
+    line-height: 1.4;
+    margin: 6px 0 22px;
     font-weight: 700;
   }
 
   .scale{
-    display:flex;
-    flex-direction:column;
-    gap: 8px;
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
   }
   .scale-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
+    min-height: 58px;
     border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    padding: 11px 12px;
-    font-size: 0.9rem;
+    border-radius: 6px;
+    padding: 6px 4px;
+    font-size: clamp(0.62rem, 2.1vw, 0.85rem);
+    line-height: 1.15;
     font-weight: 700;
     font-family: inherit;
     cursor:pointer;
     color: #FFFFFF;
+    white-space: normal;
+    word-break: normal;
+    hyphens: auto;
   }
   .scale-btn:hover{ filter: brightness(1.08); }
   .scale-btn:active{ filter: brightness(0.92); }
@@ -230,20 +252,24 @@
   .scale-btn.a{  background: var(--a); color:#12240D; }
   .scale-btn.sa{ background: var(--sa); }
 
-  /* ---------- Result / archetype grid ---------- */
-  .grid-outer{ width: min(78vw, 320px); margin: 0 0 8px; }
-  .grid-outer.small{ width: min(60vw, 240px); }
+  @media (max-width: 360px){
+    .scale{ grid-template-columns: repeat(5, 1fr); gap: 4px; }
+    .scale-btn{ min-height: 64px; padding: 4px 2px; }
+  }
+
+  .grid-outer{ width: min(84vw, 360px); margin: 0 0 10px; }
+  .grid-outer.small{ width: min(64vw, 260px); }
   .axis-row{
     display:flex; justify-content:center;
-    font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
     color: var(--muted);
   }
-  .axis-row.top{ margin-bottom: 6px; }
-  .axis-row.bottom{ margin-top: 8px; }
-  .grid-with-vaxis{ display:flex; align-items:center; gap: 8px; }
+  .axis-row.top{ margin-bottom: 8px; }
+  .axis-row.bottom{ margin-top: 10px; }
+  .grid-with-vaxis{ display:flex; align-items:center; gap: 10px; }
   .axis-vertical{
     display:flex; align-items:center; justify-content:center;
-    font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
     writing-mode: vertical-rl;
     color: var(--muted);
   }
@@ -251,13 +277,23 @@
   .grid-frame{
     flex:1;
     aspect-ratio: 1/1;
-    border: 1px solid var(--ink);
-    border-radius: 2px;
+    border: 2px solid var(--ink);
+    border-radius: 3px;
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     position:relative;
     overflow: hidden;
+    cursor: pointer;
+  }
+  .grid-frame::after{
+    content:"";
+    position:absolute; inset:0;
+    pointer-events:none;
+    background-image:
+      repeating-linear-gradient(to right, rgba(0,0,0,0.35) 0, rgba(0,0,0,0.35) 1px, transparent 1px, transparent calc(100%/8)),
+      repeating-linear-gradient(to bottom, rgba(0,0,0,0.35) 0, rgba(0,0,0,0.35) 1px, transparent 1px, transparent calc(100%/8));
+    z-index: 3;
   }
   .quad{ position:relative; }
   .quad.tl{ background: var(--c-green); border-right: 1px solid rgba(0,0,0,0.3); border-bottom: 1px solid rgba(0,0,0,0.3); }
@@ -265,24 +301,65 @@
   .quad.bl{ background: var(--c-blue); border-right: 1px solid rgba(0,0,0,0.3); }
   .quad.br{ background: var(--c-red); }
 
+  .cell-highlight{
+    position:absolute;
+    width: 12.5%;
+    height: 12.5%;
+    border: 2px solid #111111;
+    background: rgba(255,255,255,0.35);
+    pointer-events:none;
+    z-index: 5;
+    display:none;
+  }
+
+  .explore-hint{
+    font-size: 0.74rem;
+    color: var(--muted);
+    text-align:center;
+    margin: 10px 0 4px;
+  }
+  .explore-panel{
+    width:100%;
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-top: 6px;
+    display:none;
+  }
+  .explore-panel.show{ display:block; }
+  .explore-panel-label{
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--blue);
+    margin: 0 0 4px;
+  }
+  .explore-panel-text{
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--ink);
+  }
+
   .marker{
     position:absolute;
-    width: 16px; height: 16px;
+    width: 18px; height: 18px;
     border-radius: 50%;
     background: #111111;
     border: 3px solid #FFFFFF;
     left: 50%; top: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
   }
   .dot{
     position:absolute;
-    width: 18px; height: 18px;
+    width: 20px; height: 20px;
     border-radius: 50%;
     background: #FFFFFF;
     border: 2px solid #111111;
     color: #111111;
-    font-size: 0.62rem;
+    font-size: 0.65rem;
     font-weight: 800;
     display:flex; align-items:center; justify-content:center;
     transform: translate(-50%, -50%);
@@ -290,85 +367,80 @@
   }
 
   .result-name{
-    font-size: 1.55rem;
+    font-size: 1.7rem;
     text-align:center;
-    margin: 14px 0 6px;
+    margin: 18px 0 8px;
     font-weight: 800;
   }
   .result-desc{
     text-align:center;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 340px;
-    margin: 0 0 20px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    max-width: 360px;
+    margin: 0 0 22px;
     color: var(--muted);
   }
   .result-stats{
-    display:flex; gap: 8px; margin-bottom: 22px;
+    display:flex; gap: 8px; margin-bottom: 24px;
     flex-wrap: wrap; justify-content:center;
   }
   .stat-pill{
     background: #FFFFFF;
     border: 1px solid var(--line);
     border-radius: 999px;
-    padding: 6px 14px;
-    font-size: 0.72rem;
+    padding: 7px 16px;
+    font-size: 0.74rem;
     font-weight: 700;
     color: var(--muted);
+    white-space: nowrap;
   }
-  .result-actions{ display:flex; gap: 10px; flex-wrap: wrap; justify-content:center; margin-bottom: 8px; }
+  .result-actions{ display:flex; gap: 12px; flex-wrap: wrap; justify-content:center; margin-bottom: 8px; }
 
-  /* ---------- Archetypes screen ---------- */
   .archetype-list{
     width:100%;
-    margin-top: 20px;
+    margin-top: 24px;
     display:flex;
     flex-direction:column;
-    gap: 10px;
+    gap: 12px;
   }
   .archetype-item{
     display:flex;
-    gap: 10px;
+    gap: 12px;
     align-items:flex-start;
     border: 1px solid var(--line);
-    border-radius: 4px;
-    padding: 10px 12px;
+    border-radius: 6px;
+    padding: 12px 14px;
   }
   .archetype-badge{
     flex-shrink:0;
-    width: 20px; height:20px;
+    width: 22px; height:22px;
     border-radius: 50%;
     border: 2px solid #111111;
     background: #FFFFFF;
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     font-weight: 800;
     display:flex; align-items:center; justify-content:center;
   }
-  .archetype-name{ font-weight: 700; font-size: 0.92rem; margin: 0 0 2px; }
-  .archetype-blurb{ font-size: 0.82rem; color: var(--muted); margin:0; }
+  .archetype-name{ font-weight: 700; font-size: 0.95rem; margin: 0 0 3px; }
+  .archetype-blurb{ font-size: 0.84rem; color: var(--muted); margin:0; }
   .archetype-note{
-    font-size: 0.72rem;
+    font-size: 0.74rem;
     color: var(--muted);
     text-align:center;
-    margin-top: 18px;
+    margin-top: 20px;
   }
 
   .toast{
-    position: fixed; bottom: 24px; left: 50%;
+    position: fixed; bottom: 26px; left: 50%;
     transform: translateX(-50%) translateY(16px);
     background: #111111; color: #FFFFFF;
-    padding: 10px 18px; border-radius: 4px;
-    font-size: 0.8rem; font-weight: 700;
+    padding: 11px 20px; border-radius: 6px;
+    font-size: 0.82rem; font-weight: 700;
     opacity: 0; pointer-events:none;
     transition: opacity .2s ease, transform .2s ease;
     z-index: 20;
   }
   .toast.show{ opacity: 1; transform: translateX(-50%) translateY(0); }
-
-  @media (min-width: 420px){
-    .scale{ flex-direction: row; }
-    .scale-btn{ flex:1; padding: 11px 6px; font-size: 0.8rem; }
-  }
 
   @media (prefers-reduced-motion: reduce){
     .progress-fill{ transition: none; }
@@ -386,14 +458,48 @@
     </div>
   </div>
 
-  <!-- LANDING -->
   <section class="screen active" id="screen-landing">
     <div class="lang-row" id="lang-row">
-      <button class="lang-btn active" data-lang="en" title="English">🇬🇧</button>
-      <button class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
-      <button class="lang-btn" data-lang="fr" title="Français">🇫🇷</button>
-      <button class="lang-btn" data-lang="de" title="Deutsch">🇩🇪</button>
-      <button class="lang-btn" data-lang="ru" title="Русский">🇷🇺</button>
+      <button class="lang-btn active" data-lang="en" title="English">
+        <svg viewBox="0 0 60 36" xmlns="http://www.w3.org/2000/svg">
+          <rect width="60" height="36" fill="#00247D"/>
+          <line x1="0" y1="0" x2="60" y2="36" stroke="#FFFFFF" stroke-width="10"/>
+          <line x1="60" y1="0" x2="0" y2="36" stroke="#FFFFFF" stroke-width="10"/>
+          <line x1="0" y1="0" x2="60" y2="36" stroke="#CF142B" stroke-width="4"/>
+          <line x1="60" y1="0" x2="0" y2="36" stroke="#CF142B" stroke-width="4"/>
+          <rect x="24" width="12" height="36" fill="#FFFFFF"/>
+          <rect y="12" width="60" height="12" fill="#FFFFFF"/>
+          <rect x="27" width="6" height="36" fill="#CF142B"/>
+          <rect y="15" width="60" height="6" fill="#CF142B"/>
+        </svg>
+      </button>
+      <button class="lang-btn" data-lang="es" title="Español">
+        <svg viewBox="0 0 60 36" xmlns="http://www.w3.org/2000/svg">
+          <rect width="60" height="36" fill="#AA151B"/>
+          <rect y="9" width="60" height="18" fill="#F1BF00"/>
+        </svg>
+      </button>
+      <button class="lang-btn" data-lang="fr" title="Français">
+        <svg viewBox="0 0 60 36" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="36" fill="#0055A4"/>
+          <rect x="20" width="20" height="36" fill="#FFFFFF"/>
+          <rect x="40" width="20" height="36" fill="#EF4135"/>
+        </svg>
+      </button>
+      <button class="lang-btn" data-lang="de" title="Deutsch">
+        <svg viewBox="0 0 60 36" xmlns="http://www.w3.org/2000/svg">
+          <rect width="60" height="12" fill="#000000"/>
+          <rect y="12" width="60" height="12" fill="#DD0000"/>
+          <rect y="24" width="60" height="12" fill="#FFCE00"/>
+        </svg>
+      </button>
+      <button class="lang-btn" data-lang="ru" title="Русский">
+        <svg viewBox="0 0 60 36" xmlns="http://www.w3.org/2000/svg">
+          <rect width="60" height="12" fill="#FFFFFF"/>
+          <rect y="12" width="60" height="12" fill="#0039A6"/>
+          <rect y="24" width="60" height="12" fill="#D52B1E"/>
+        </svg>
+      </button>
     </div>
     <h1 class="hero">Grounded</h1>
     <p class="lede" id="landing-lede">How strict is your household? Answer honestly.</p>
@@ -402,12 +508,11 @@
     <p class="landing-footnote" id="landing-footnote">No sign up. No cookies. Nothing saved.</p>
   </section>
 
-  <!-- QUIZ -->
   <section class="screen" id="screen-quiz">
     <div class="quiz-top">
       <div class="quiz-nav-row">
         <button class="back-link" id="btn-back" disabled>← Back</button>
-        <div class="progress-label" id="progress-label">QUESTION 1 / 30</div>
+        <div class="progress-label" id="progress-label">QUESTION 1 / 36</div>
       </div>
       <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
     </div>
@@ -418,7 +523,6 @@
     </div>
   </section>
 
-  <!-- RESULT -->
   <section class="screen" id="screen-result">
     <div class="grid-outer">
       <div class="axis-row top"><span id="axis-relaxed">RELAXED</span></div>
@@ -429,11 +533,17 @@
           <div class="quad tr"></div>
           <div class="quad bl"></div>
           <div class="quad br"></div>
+          <div class="cell-highlight" id="grid-cell-highlight"></div>
           <div class="marker" id="result-marker"></div>
         </div>
         <div class="axis-vertical"><span id="axis-supervision">SUPERVISION</span></div>
       </div>
       <div class="axis-row bottom"><span id="axis-strict">STRICT</span></div>
+    </div>
+    <p class="explore-hint" id="result-explore-hint">Tap the grid to explore other spots</p>
+    <div class="explore-panel" id="result-explore-panel">
+      <p class="explore-panel-label" id="result-explore-title">AT THAT SPOT</p>
+      <p class="explore-panel-text" id="result-explore-text"></p>
     </div>
 
     <h2 class="result-name" id="result-name">Result Name</h2>
@@ -450,9 +560,8 @@
     </div>
   </section>
 
-  <!-- ARCHETYPES -->
   <section class="screen" id="screen-archetypes">
-    <div class="grid-outer small">
+    <div class="grid-outer">
       <div class="axis-row top"><span>RELAXED</span></div>
       <div class="grid-with-vaxis">
         <div class="axis-vertical left"><span>TRUST</span></div>
@@ -461,14 +570,21 @@
           <div class="quad tr"></div>
           <div class="quad bl"></div>
           <div class="quad br"></div>
+          <div class="cell-highlight" id="archetype-cell-highlight"></div>
         </div>
         <div class="axis-vertical"><span>SUPERVISION</span></div>
       </div>
       <div class="axis-row bottom"><span>STRICT</span></div>
     </div>
+    <p class="explore-hint" id="archetype-explore-hint">Tap any square to see what it means</p>
+    <div class="explore-panel show" id="archetype-explore-panel">
+      <p class="explore-panel-label" id="archetype-explore-title">AT THAT SPOT</p>
+      <p class="explore-panel-text" id="archetype-explore-text">Tap the grid above to explore.</p>
+    </div>
+
     <div class="archetype-list" id="archetype-list"></div>
-    <p class="archetype-note">These are fictional composites, not real people — just a fun way to see the range of the grid.</p>
-    <div class="result-actions" style="margin-top:18px;">
+    <p class="archetype-note" id="archetype-note">The numbered dots are fictional composites, not real people — just a fun way to see the range of the grid.</p>
+    <div class="result-actions" style="margin-top:20px;">
       <button class="btn btn-ghost" id="btn-archetypes-back">Back</button>
     </div>
   </section>
@@ -481,9 +597,6 @@
 (function(){
   "use strict";
 
-  /* =========================================================
-     STRINGS (UI text, 5 languages)
-     ========================================================= */
   var STRINGS = {
     en: {
       lede: "How strict is your household? Answer honestly.",
@@ -495,7 +608,10 @@
       copy: "Copy result", again: "Take again",
       toastCopied: "Copied to clipboard", toastFail: "Could not copy — select the text",
       axisRelaxed: "RELAXED", axisStrict: "STRICT", axisTrust: "TRUST", axisSuper: "SUPERVISION",
-      archNote: "These are fictional composites, not real people — just a fun way to see the range of the grid."
+      exploreHintResult: "Tap the grid to explore other spots",
+      exploreHintArch: "Tap any square to see what it means",
+      exploreTitle: "AT THAT SPOT", exploreDefault: "Tap the grid above to explore.",
+      archNote: "The numbered dots are fictional composites, not real people — just a fun way to see the range of the grid."
     },
     es: {
       lede: "¿Qué tan estricta es tu casa? Responde con sinceridad.",
@@ -507,7 +623,10 @@
       copy: "Copiar resultado", again: "Repetir",
       toastCopied: "Copiado al portapapeles", toastFail: "No se pudo copiar — selecciona el texto",
       axisRelaxed: "RELAJADO", axisStrict: "ESTRICTO", axisTrust: "CONFIANZA", axisSuper: "SUPERVISIÓN",
-      archNote: "Son personajes ficticios, no personas reales — solo una forma divertida de ver el rango de la cuadrícula."
+      exploreHintResult: "Toca la cuadrícula para explorar otros puntos",
+      exploreHintArch: "Toca cualquier casilla para ver qué significa",
+      exploreTitle: "EN ESE PUNTO", exploreDefault: "Toca la cuadrícula de arriba para explorar.",
+      archNote: "Los puntos numerados son personajes ficticios, no personas reales — solo una forma divertida de ver el rango de la cuadrícula."
     },
     fr: {
       lede: "À quel point ta famille est-elle stricte ? Réponds honnêtement.",
@@ -519,7 +638,10 @@
       copy: "Copier le résultat", again: "Recommencer",
       toastCopied: "Copié dans le presse-papiers", toastFail: "Impossible de copier — sélectionne le texte",
       axisRelaxed: "DÉTENDU", axisStrict: "STRICT", axisTrust: "CONFIANCE", axisSuper: "SURVEILLANCE",
-      archNote: "Ce sont des personnages fictifs, pas de vraies personnes — juste une façon amusante de voir l'étendue de la grille."
+      exploreHintResult: "Touche la grille pour explorer d'autres points",
+      exploreHintArch: "Touche une case pour voir ce qu'elle signifie",
+      exploreTitle: "À CET ENDROIT", exploreDefault: "Touche la grille ci-dessus pour explorer.",
+      archNote: "Les points numérotés sont des personnages fictifs, pas de vraies personnes — juste une façon amusante de voir l'étendue de la grille."
     },
     de: {
       lede: "Wie streng ist dein Zuhause? Antworte ehrlich.",
@@ -531,362 +653,132 @@
       copy: "Ergebnis kopieren", again: "Nochmal",
       toastCopied: "In die Zwischenablage kopiert", toastFail: "Kopieren fehlgeschlagen — Text markieren",
       axisRelaxed: "LOCKER", axisStrict: "STRENG", axisTrust: "VERTRAUEN", axisSuper: "KONTROLLE",
-      archNote: "Das sind fiktive Figuren, keine echten Personen — nur eine unterhaltsame Art, die Bandbreite des Rasters zu zeigen."
+      exploreHintResult: "Tippe auf das Raster, um andere Stellen zu erkunden",
+      exploreHintArch: "Tippe auf ein Feld, um seine Bedeutung zu sehen",
+      exploreTitle: "AN DIESER STELLE", exploreDefault: "Tippe oben auf das Raster, um es zu erkunden.",
+      archNote: "Die nummerierten Punkte sind fiktive Figuren, keine echten Personen — nur eine unterhaltsame Art, die Bandbreite des Rasters zu zeigen."
     },
     ru: {
       lede: "Насколько строгая твоя семья? Отвечай честно.",
       start: "НАЧАТЬ", menu: "Меню", back: "Назад", seeArchetypes: "Смотреть архетипы →",
       footnote: "Без регистрации. Без cookies. Ничего не сохраняется.",
       question: "ВОПРОС", of: "/",
-      scale: ["Совершенно не согласен","Не согласен","Нейтрально","Согласен","Полностью согласен"],
+      scale: ["Совсем не\u00A0согласен","Не\u00A0согласен","Нейтрально","Согласен","Полностью\u00A0согласен"],
       statStrict: "СТРОГОСТЬ", statSuper: "КОНТРОЛЬ",
-      copy: "Скопировать результат", again: "Пройти снова",
-      toastCopied: "Скопировано в буфер обмена", toastFail: "Не удалось скопировать — выделите текст",
+      copy: "Скопировать", again: "Пройти снова",
+      toastCopied: "Скопировано", toastFail: "Не удалось скопировать — выделите текст",
       axisRelaxed: "МЯГКО", axisStrict: "СТРОГО", axisTrust: "ДОВЕРИЕ", axisSuper: "КОНТРОЛЬ",
-      archNote: "Это вымышленные образы, а не реальные люди — просто наглядный способ показать диапазон сетки."
+      exploreHintResult: "Нажми на сетку, чтобы посмотреть другие точки",
+      exploreHintArch: "Нажми на любую клетку, чтобы узнать её значение",
+      exploreTitle: "В ЭТОЙ ТОЧКЕ", exploreDefault: "Нажми на сетку выше, чтобы исследовать.",
+      archNote: "Пронумерованные точки — вымышленные образы, а не реальные люди — просто наглядный способ показать диапазон сетки."
     }
   };
 
   var currentLang = "en";
 
-  /* =========================================================
-     QUESTIONS — plain agree/disagree statements.
-     axis "s" = strictness (vertical: agree -> stricter)
-     axis "v" = supervision (horizontal: agree -> more supervised)
-     15 statements per axis, fully independent, so spamming
-     agree lands strict+supervised (Lockdown) and spamming
-     disagree lands relaxed+trusting (Open Door) every time.
-     ========================================================= */
+  /* axis "s" strictness (agree -> stricter, unless invert:true)
+     axis "v" supervision (agree -> more supervised) */
   var QUESTIONS = [
-    { axis:"s", text:{
-      en:"My parents set a strict curfew.",
-      es:"Mis padres imponen un toque de queda estricto.",
-      fr:"Mes parents imposent un couvre-feu strict.",
-      de:"Meine Eltern setzen eine strenge Ausgangssperre.",
-      ru:"Мои родители устанавливают строгий комендантский час."
-    }},
-    { axis:"s", text:{
-      en:"Breaking a house rule leads to real consequences.",
-      es:"Romper una regla de casa tiene consecuencias reales.",
-      fr:"Enfreindre une règle a de vraies conséquences.",
-      de:"Eine Regel zu brechen hat echte Konsequenzen.",
-      ru:"Нарушение домашнего правила влечёт реальные последствия."
-    }},
-    { axis:"s", text:{
-      en:"Dating before a certain age was strictly forbidden.",
-      es:"Salir con alguien antes de cierta edad estaba estrictamente prohibido.",
-      fr:"Sortir avec quelqu'un avant un certain âge était strictement interdit.",
-      de:"Vor einem bestimmten Alter zu daten war strikt verboten.",
-      ru:"Встречаться с кем-то до определённого возраста было строго запрещено."
-    }},
-    { axis:"s", text:{
-      en:"Screen time is limited by a strict rule.",
-      es:"El tiempo de pantalla está limitado por una regla estricta.",
-      fr:"Le temps d'écran est limité par une règle stricte.",
-      de:"Die Bildschirmzeit ist durch eine strenge Regel begrenzt.",
-      ru:"Экранное время ограничено строгим правилом."
-    }},
-    { axis:"s", text:{
-      en:"Parties are rarely something I'm allowed to go to.",
-      es:"Rara vez me dejan ir a fiestas.",
-      fr:"On me laisse rarement aller à des fêtes.",
-      de:"Ich darf nur selten auf Partys gehen.",
-      ru:"Мне редко разрешают ходить на вечеринки."
-    }},
-    { axis:"s", text:{
-      en:"Chores are mandatory, no exceptions.",
-      es:"Las tareas del hogar son obligatorias, sin excepciones.",
-      fr:"Les tâches ménagères sont obligatoires, sans exception.",
-      de:"Hausarbeiten sind Pflicht, keine Ausnahmen.",
-      ru:"Домашние обязанности обязательны, без исключений."
-    }},
-    { axis:"s", text:{
-      en:"Spending my own money still needs approval.",
-      es:"Gastar mi propio dinero todavía necesita aprobación.",
-      fr:"Dépenser mon propre argent nécessite quand même une autorisation.",
-      de:"Selbst mein eigenes Geld auszugeben braucht Zustimmung.",
-      ru:"Даже трату своих денег нужно согласовывать."
-    }},
-    { axis:"s", text:{
-      en:"Sleepovers are hard to get permission for.",
-      es:"Es difícil que me den permiso para quedarme a dormir en casa de amigos.",
-      fr:"C'est difficile d'avoir la permission de dormir chez des amis.",
-      de:"Übernachtungen bei Freunden zu genehmigen ist schwierig.",
-      ru:"Трудно получить разрешение остаться ночевать у друзей."
-    }},
-    { axis:"s", text:{
-      en:"Homework has to be finished before anything else.",
-      es:"La tarea tiene que terminarse antes que cualquier otra cosa.",
-      fr:"Les devoirs doivent être finis avant tout le reste.",
-      de:"Hausaufgaben müssen vor allem anderen fertig sein.",
-      ru:"Домашнее задание нужно закончить прежде всего остального."
-    }},
-    { axis:"s", text:{
-      en:"Staying out past midnight is basically not allowed.",
-      es:"Quedarme fuera después de medianoche básicamente no está permitido.",
-      fr:"Rester dehors après minuit n'est pratiquement pas autorisé.",
-      de:"Nach Mitternacht draußen zu bleiben ist praktisch nicht erlaubt.",
-      ru:"Оставаться на улице после полуночи практически запрещено."
-    }},
-    { axis:"s", text:{
-      en:"Physical punishment, like spanking, was used to enforce rules.",
-      es:"El castigo físico, como las nalgadas, se usaba para hacer cumplir las reglas.",
-      fr:"Les punitions physiques, comme la fessée, servaient à faire respecter les règles.",
-      de:"Körperliche Strafen, wie Klapse, wurden benutzt, um Regeln durchzusetzen.",
-      ru:"Физические наказания, например шлепки, использовались для соблюдения правил."
-    }},
-    { axis:"s", text:{
-      en:"Yelling was a normal way rules got enforced.",
-      es:"Gritar era una forma normal de hacer cumplir las reglas.",
-      fr:"Crier était une façon normale de faire respecter les règles.",
-      de:"Anschreien war eine normale Art, Regeln durchzusetzen.",
-      ru:"Крик был обычным способом добиться соблюдения правил."
-    }},
-    { axis:"s", text:{
-      en:"There was a strict dress code at home.",
-      es:"Había un código de vestimenta estricto en casa.",
-      fr:"Il y avait un code vestimentaire strict à la maison.",
-      de:"Zu Hause gab es einen strengen Kleidungscode.",
-      ru:"Дома действовал строгий дресс-код."
-    }},
-    { axis:"s", text:{
-      en:"Missing a family meal without a very good reason wasn't allowed.",
-      es:"Faltar a una comida familiar sin una muy buena razón no estaba permitido.",
-      fr:"Manquer un repas de famille sans une très bonne raison n'était pas permis.",
-      de:"Ein Familienessen ohne triftigen Grund zu verpassen war nicht erlaubt.",
-      ru:"Пропустить семейный ужин без очень веской причины было нельзя."
-    }},
-    { axis:"s", text:{
-      en:"Extracurricular activities were mandatory, not optional.",
-      es:"Las actividades extracurriculares eran obligatorias, no opcionales.",
-      fr:"Les activités extrascolaires étaient obligatoires, pas facultatives.",
-      de:"Außerschulische Aktivitäten waren Pflicht, nicht freiwillig.",
-      ru:"Дополнительные занятия были обязательными, а не по желанию."
-    }},
+    { axis:"s", text:{ en:"My parents set a strict curfew.", es:"Mis padres imponen un toque de queda estricto.", fr:"Mes parents imposent un couvre-feu strict.", de:"Meine Eltern setzen eine strenge Ausgangssperre.", ru:"Мои родители устанавливают строгий комендантский час." }},
+    { axis:"s", text:{ en:"Breaking a house rule leads to real consequences.", es:"Romper una regla de casa tiene consecuencias reales.", fr:"Enfreindre une règle a de vraies conséquences.", de:"Eine Regel zu brechen hat echte Konsequenzen.", ru:"Нарушение домашнего правила влечёт реальные последствия." }},
+    { axis:"s", text:{ en:"Dating before a certain age was strictly forbidden.", es:"Salir con alguien antes de cierta edad estaba estrictamente prohibido.", fr:"Sortir avec quelqu'un avant un certain âge était strictement interdit.", de:"Vor einem bestimmten Alter zu daten war strikt verboten.", ru:"Встречаться с кем-то до определённого возраста было строго запрещено." }},
+    { axis:"s", text:{ en:"Screen time is limited by a strict rule.", es:"El tiempo de pantalla está limitado por una regla estricta.", fr:"Le temps d'écran est limité par une règle stricte.", de:"Die Bildschirmzeit ist durch eine strenge Regel begrenzt.", ru:"Экранное время ограничено строгим правилом." }},
+    { axis:"s", text:{ en:"Parties are rarely something I'm allowed to go to.", es:"Rara vez me dejan ir a fiestas.", fr:"On me laisse rarement aller à des fêtes.", de:"Ich darf nur selten auf Partys gehen.", ru:"Мне редко разрешают ходить на вечеринки." }},
+    { axis:"s", text:{ en:"Chores are mandatory, no exceptions.", es:"Las tareas del hogar son obligatorias, sin excepciones.", fr:"Les tâches ménagères sont obligatoires, sans exception.", de:"Hausarbeiten sind Pflicht, keine Ausnahmen.", ru:"Домашние обязанности обязательны, без исключений." }},
+    { axis:"s", text:{ en:"Spending my own money still needs approval.", es:"Gastar mi propio dinero todavía necesita aprobación.", fr:"Dépenser mon propre argent nécessite quand même une autorisation.", de:"Selbst mein eigenes Geld auszugeben braucht Zustimmung.", ru:"Даже трату своих денег нужно согласовывать." }},
+    { axis:"s", text:{ en:"Sleepovers are hard to get permission for.", es:"Es difícil que me den permiso para quedarme a dormir en casa de amigos.", fr:"C'est difficile d'avoir la permission de dormir chez des amis.", de:"Übernachtungen bei Freunden zu genehmigen ist schwierig.", ru:"Трудно получить разрешение остаться ночевать у друзей." }},
+    { axis:"s", text:{ en:"Homework has to be finished before anything else.", es:"La tarea tiene que terminarse antes que cualquier otra cosa.", fr:"Les devoirs doivent être finis avant tout le reste.", de:"Hausaufgaben müssen vor allem anderen fertig sein.", ru:"Домашнее задание нужно закончить прежде всего остального." }},
+    { axis:"s", text:{ en:"Staying out past midnight is basically not allowed.", es:"Quedarme fuera después de medianoche básicamente no está permitido.", fr:"Rester dehors après minuit n'est pratiquement pas autorisé.", de:"Nach Mitternacht draußen zu bleiben ist praktisch nicht erlaubt.", ru:"Оставаться на улице после полуночи практически запрещено." }},
+    { axis:"s", text:{ en:"Physical punishment, like spanking, was used to enforce rules.", es:"El castigo físico, como las nalgadas, se usaba para hacer cumplir las reglas.", fr:"Les punitions physiques, comme la fessée, servaient à faire respecter les règles.", de:"Körperliche Strafen, wie Klapse, wurden benutzt, um Regeln durchzusetzen.", ru:"Физические наказания, например шлепки, использовались для соблюдения правил." }},
+    { axis:"s", text:{ en:"Yelling was a normal way rules got enforced.", es:"Gritar era una forma normal de hacer cumplir las reglas.", fr:"Crier était une façon normale de faire respecter les règles.", de:"Anschreien war eine normale Art, Regeln durchzusetzen.", ru:"Крик был обычным способом добиться соблюдения правил." }},
+    { axis:"s", text:{ en:"There was a strict dress code at home.", es:"Había un código de vestimenta estricto en casa.", fr:"Il y avait un code vestimentaire strict à la maison.", de:"Zu Hause gab es einen strengen Kleidungscode.", ru:"Дома действовал строгий дресс-код." }},
+    { axis:"s", text:{ en:"Missing a family meal without a very good reason wasn't allowed.", es:"Faltar a una comida familiar sin una muy buena razón no estaba permitido.", fr:"Manquer un repas de famille sans une très bonne raison n'était pas permis.", de:"Ein Familienessen ohne triftigen Grund zu verpassen war nicht erlaubt.", ru:"Пропустить семейный ужин без очень веской причины было нельзя." }},
+    { axis:"s", text:{ en:"Extracurricular activities were mandatory, not optional.", es:"Las actividades extracurriculares eran obligatorias, no opcionales.", fr:"Les activités extrascolaires étaient obligatoires, pas facultatives.", de:"Außerschulische Aktivitäten waren Pflicht, nicht freiwillig.", ru:"Дополнительные занятия были обязательными, а не по желанию." }},
+    { axis:"s", invert:true, text:{ en:"Swearing or cursing in conversation is totally normal at my house.", es:"Decir groserías o palabrotas en las conversaciones es totalmente normal en mi casa.", fr:"Dire des gros mots dans la conversation est tout à fait normal chez moi.", de:"Fluchen oder Schimpfwörter im Gespräch sind bei mir zu Hause ganz normal.", ru:"Ругательства или мат в разговоре — это совершенно нормально в моём доме." }},
+    { axis:"s", text:{ en:"Using polite language, like please and thank you, is strictly required.", es:"Usar un lenguaje educado, como decir 'por favor' y 'gracias', es obligatorio.", fr:"Utiliser un langage poli, comme dire « s'il te plaît » et « merci », est obligatoire.", de:"Höfliche Sprache, wie 'bitte' und 'danke', ist strikt vorgeschrieben.", ru:"Вежливые слова, вроде «пожалуйста» и «спасибо», строго обязательны." }},
+    { axis:"s", text:{ en:"Talking back or raising your voice to a parent is not tolerated.", es:"Contestar mal o levantar la voz a un padre no se tolera.", fr:"Répondre ou hausser la voix envers un parent n'est pas toléré.", de:"Widerworte geben oder die Stimme gegenüber einem Elternteil erheben wird nicht toleriert.", ru:"Пререкания или повышение голоса на родителя недопустимы." }},
 
-    { axis:"v", text:{
-      en:"My parents check my phone.",
-      es:"Mis padres revisan mi teléfono.",
-      fr:"Mes parents vérifient mon téléphone.",
-      de:"Meine Eltern kontrollieren mein Handy.",
-      ru:"Мои родители проверяют мой телефон."
-    }},
-    { axis:"v", text:{
-      en:"My location is shared with my parents.",
-      es:"Mi ubicación se comparte con mis padres.",
-      fr:"Ma position est partagée avec mes parents.",
-      de:"Mein Standort wird mit meinen Eltern geteilt.",
-      ru:"Моё местоположение доступно родителям."
-    }},
-    { axis:"v", text:{
-      en:"My parents know my passwords.",
-      es:"Mis padres conocen mis contraseñas.",
-      fr:"Mes parents connaissent mes mots de passe.",
-      de:"Meine Eltern kennen meine Passwörter.",
-      ru:"Мои родители знают мои пароли."
-    }},
-    { axis:"v", text:{
-      en:"My grades are checked online regularly.",
-      es:"Mis calificaciones se revisan en línea con regularidad.",
-      fr:"Mes notes sont vérifiées régulièrement en ligne.",
-      de:"Meine Noten werden regelmäßig online überprüft.",
-      ru:"Мои оценки регулярно проверяют онлайн."
-    }},
-    { axis:"v", text:{
-      en:"I get frequent check-in texts when I'm out.",
-      es:"Recibo mensajes frecuentes para saber cómo estoy cuando salgo.",
-      fr:"Je reçois souvent des messages pour savoir où j'en suis quand je sors.",
-      de:"Ich bekomme oft Nachrichten, wenn ich unterwegs bin.",
-      ru:"Когда я гуляю, мне часто пишут, чтобы узнать, как я."
-    }},
-    { axis:"v", text:{
-      en:"My social media accounts are watched closely.",
-      es:"Mis redes sociales son vigiladas de cerca.",
-      fr:"Mes réseaux sociaux sont surveillés de près.",
-      de:"Meine sozialen Medien werden genau beobachtet.",
-      ru:"За моими соцсетями пристально следят."
-    }},
-    { axis:"v", text:{
-      en:"My room gets checked without asking.",
-      es:"Mi cuarto se revisa sin preguntar.",
-      fr:"Ma chambre est fouillée sans qu'on me demande.",
-      de:"Mein Zimmer wird ohne zu fragen kontrolliert.",
-      ru:"Мою комнату проверяют без спроса."
-    }},
-    { axis:"v", text:{
-      en:"My friends get looked into before I hang out with them.",
-      es:"Investigan a mis amigos antes de que salga con ellos.",
-      fr:"Mes amis sont vérifiés avant que je sorte avec eux.",
-      de:"Meine Freunde werden überprüft, bevor ich mit ihnen abhänge.",
-      ru:"Моих друзей проверяют, прежде чем я начинаю с ними общаться."
-    }},
-    { axis:"v", text:{
-      en:"My parents want to know exactly where I am at all times.",
-      es:"Mis padres quieren saber exactamente dónde estoy en todo momento.",
-      fr:"Mes parents veulent toujours savoir exactement où je suis.",
-      de:"Meine Eltern wollen immer genau wissen, wo ich bin.",
-      ru:"Родители всегда хотят точно знать, где я нахожусь."
-    }},
-    { axis:"v", text:{
-      en:"My spending shows up somewhere they can see it.",
-      es:"Mis gastos aparecen en algún lugar donde ellos los pueden ver.",
-      fr:"Mes dépenses apparaissent quelque part où ils peuvent les voir.",
-      de:"Meine Ausgaben sind irgendwo sichtbar für sie.",
-      ru:"Мои траты видны им где-то в приложении или счёте."
-    }},
-    { axis:"v", text:{
-      en:"My parents kept close tabs on who I was dating.",
-      es:"Mis padres vigilaban de cerca con quién salía.",
-      fr:"Mes parents surveillaient de près qui je fréquentais.",
-      de:"Meine Eltern behielten genau im Blick, mit wem ich mich traf.",
-      ru:"Мои родители пристально следили за тем, с кем я встречаюсь."
-    }},
-    { axis:"v", text:{
-      en:"My diary or journal was read without permission.",
-      es:"Mi diario se leía sin permiso.",
-      fr:"Mon journal intime était lu sans permission.",
-      de:"Mein Tagebuch wurde ohne Erlaubnis gelesen.",
-      ru:"Мой дневник читали без разрешения."
-    }},
-    { axis:"v", text:{
-      en:"My phone calls or texts were sometimes listened to or read.",
-      es:"Mis llamadas o mensajes a veces eran escuchados o leídos.",
-      fr:"Mes appels ou messages étaient parfois écoutés ou lus.",
-      de:"Meine Anrufe oder Nachrichten wurden manchmal mitgehört oder gelesen.",
-      ru:"Мои звонки или сообщения иногда прослушивались или читались."
-    }},
-    { axis:"v", text:{
-      en:"A tracking app was installed on my phone.",
-      es:"Tenía una aplicación de rastreo instalada en mi teléfono.",
-      fr:"Une application de suivi était installée sur mon téléphone.",
-      de:"Auf meinem Handy war eine Tracking-App installiert.",
-      ru:"На моём телефоне было установлено приложение для отслеживания."
-    }},
-    { axis:"v", text:{
-      en:"My report card was discussed with me point by point.",
-      es:"Mi boletín de calificaciones se discutía conmigo punto por punto.",
-      fr:"Mon bulletin scolaire était discuté avec moi point par point.",
-      de:"Mein Zeugnis wurde mit mir Punkt für Punkt besprochen.",
-      ru:"Мой табель успеваемости разбирали со мной по каждому пункту."
-    }}
+    { axis:"v", text:{ en:"My parents check my phone.", es:"Mis padres revisan mi teléfono.", fr:"Mes parents vérifient mon téléphone.", de:"Meine Eltern kontrollieren mein Handy.", ru:"Мои родители проверяют мой телефон." }},
+    { axis:"v", text:{ en:"My location is shared with my parents.", es:"Mi ubicación se comparte con mis padres.", fr:"Ma position est partagée avec mes parents.", de:"Mein Standort wird mit meinen Eltern geteilt.", ru:"Моё местоположение доступно родителям." }},
+    { axis:"v", text:{ en:"My parents know my passwords.", es:"Mis padres conocen mis contraseñas.", fr:"Mes parents connaissent mes mots de passe.", de:"Meine Eltern kennen meine Passwörter.", ru:"Мои родители знают мои пароли." }},
+    { axis:"v", text:{ en:"My grades are checked online regularly.", es:"Mis calificaciones se revisan en línea con regularidad.", fr:"Mes notes sont vérifiées régulièrement en ligne.", de:"Meine Noten werden regelmäßig online überprüft.", ru:"Мои оценки регулярно проверяют онлайн." }},
+    { axis:"v", text:{ en:"I get frequent check-in texts when I'm out.", es:"Recibo mensajes frecuentes para saber cómo estoy cuando salgo.", fr:"Je reçois souvent des messages pour savoir où j'en suis quand je sors.", de:"Ich bekomme oft Nachrichten, wenn ich unterwegs bin.", ru:"Когда я гуляю, мне часто пишут, чтобы узнать, как я." }},
+    { axis:"v", text:{ en:"My social media accounts are watched closely.", es:"Mis redes sociales son vigiladas de cerca.", fr:"Mes réseaux sociaux sont surveillés de près.", de:"Meine sozialen Medien werden genau beobachtet.", ru:"За моими соцсетями пристально следят." }},
+    { axis:"v", text:{ en:"My room gets checked without asking.", es:"Mi cuarto se revisa sin preguntar.", fr:"Ma chambre est fouillée sans qu'on me demande.", de:"Mein Zimmer wird ohne zu fragen kontrolliert.", ru:"Мою комнату проверяют без спроса." }},
+    { axis:"v", text:{ en:"My friends get looked into before I hang out with them.", es:"Investigan a mis amigos antes de que salga con ellos.", fr:"Mes amis sont vérifiés avant que je sorte avec eux.", de:"Meine Freunde werden überprüft, bevor ich mit ihnen abhänge.", ru:"Моих друзей проверяют, прежде чем я начинаю с ними общаться." }},
+    { axis:"v", text:{ en:"My parents want to know exactly where I am at all times.", es:"Mis padres quieren saber exactamente dónde estoy en todo momento.", fr:"Mes parents veulent toujours savoir exactement où je suis.", de:"Meine Eltern wollen immer genau wissen, wo ich bin.", ru:"Родители всегда хотят точно знать, где я нахожусь." }},
+    { axis:"v", text:{ en:"My spending shows up somewhere they can see it.", es:"Mis gastos aparecen en algún lugar donde ellos los pueden ver.", fr:"Mes dépenses apparaissent quelque part où ils peuvent les voir.", de:"Meine Ausgaben sind irgendwo sichtbar für sie.", ru:"Мои траты видны им где-то в приложении или счёте." }},
+    { axis:"v", text:{ en:"My parents kept close tabs on who I was dating.", es:"Mis padres vigilaban de cerca con quién salía.", fr:"Mes parents surveillaient de près qui je fréquentais.", de:"Meine Eltern behielten genau im Blick, mit wem ich mich traf.", ru:"Мои родители пристально следили за тем, с кем я встречаюсь." }},
+    { axis:"v", text:{ en:"My diary or journal was read without permission.", es:"Mi diario se leía sin permiso.", fr:"Mon journal intime était lu sans permission.", de:"Mein Tagebuch wurde ohne Erlaubnis gelesen.", ru:"Мой дневник читали без разрешения." }},
+    { axis:"v", text:{ en:"My phone calls or texts were sometimes listened to or read.", es:"Mis llamadas o mensajes a veces eran escuchados o leídos.", fr:"Mes appels ou messages étaient parfois écoutés ou lus.", de:"Meine Anrufe oder Nachrichten wurden manchmal mitgehört oder gelesen.", ru:"Мои звонки или сообщения иногда прослушивались или читались." }},
+    { axis:"v", text:{ en:"A tracking app was installed on my phone.", es:"Tenía una aplicación de rastreo instalada en mi teléfono.", fr:"Une application de suivi était installée sur mon téléphone.", de:"Auf meinem Handy war eine Tracking-App installiert.", ru:"На моём телефоне было установлено приложение для отслеживания." }},
+    { axis:"v", text:{ en:"My report card was discussed with me point by point.", es:"Mi boletín de calificaciones se discutía conmigo punto por punto.", fr:"Mon bulletin scolaire était discuté avec moi point par point.", de:"Mein Zeugnis wurde mit mir Punkt für Punkt besprochen.", ru:"Мой табель успеваемости разбирали со мной по каждому пункту." }},
+    { axis:"v", text:{ en:"My manners get corrected on the spot, every single time.", es:"Mis modales se corrigen en el momento, todas las veces.", fr:"Mes manières sont corrigées sur-le-champ, à chaque fois.", de:"Mein Benehmen wird sofort korrigiert, jedes Mal.", ru:"Мои манеры поправляют сразу же, каждый раз." }},
+    { axis:"v", text:{ en:"If my manners slip in front of guests, it gets addressed right after.", es:"Si mis modales fallan delante de invitados, se habla de eso enseguida.", fr:"Si mes manières laissent à désirer devant des invités, on m'en parle juste après.", de:"Wenn mein Benehmen vor Gästen nachlässt, wird das direkt danach angesprochen.", ru:"Если при гостях я веду себя невежливо, мне сразу об этом говорят." }},
+    { axis:"v", text:{ en:"How I address adults gets noticed and commented on, every time.", es:"Cómo me dirijo a los adultos siempre se nota y se comenta.", fr:"La façon dont je m'adresse aux adultes est toujours remarquée et commentée.", de:"Wie ich Erwachsene anspreche, wird jedes Mal bemerkt und kommentiert.", ru:"То, как я обращаюсь к взрослым, всегда замечают и комментируют." }}
   ];
 
   var LEVELS = [-2,-1,0,1,2];
   var SCALE_CLASSES = ["sd","d","n","a","sa"];
 
-  /* =========================================================
-     RESULTS
-     ========================================================= */
-  var RESULTS = {
-    center: {
-      name:{ en:"The Balancer", es:"El Equilibrado", fr:"L'Équilibré", de:"Der Ausgleicher", ru:"Уравновешенный" },
-      desc:{
-        en:"No strong lean either way — a mix of rules and freedom.",
-        es:"Sin inclinación fuerte hacia ningún lado — una mezcla de reglas y libertad.",
-        fr:"Aucune tendance marquée — un mélange de règles et de liberté.",
-        de:"Keine starke Tendenz — eine Mischung aus Regeln und Freiheit.",
-        ru:"Нет явного перекоса — смесь правил и свободы."
-      }
+  var RESULT_NAMES = {
+    center:  { en:"The Balancer", es:"El Equilibrado", fr:"L'Équilibré", de:"Der Ausgleicher", ru:"Уравновешенный" },
+    greenTL: { en:"The Open Door", es:"La Puerta Abierta", fr:"La Porte Ouverte", de:"Die Offene Tür", ru:"Открытая Дверь" },
+    yellowTR:{ en:"The Worried Ally", es:"El Aliado Preocupado", fr:"L'Allié Inquiet", de:"Der Besorgte Verbündete", ru:"Тревожный Союзник" },
+    blueBL:  { en:"The Steady Hand", es:"La Mano Firme", fr:"La Main Ferme", de:"Die Ruhige Hand", ru:"Твёрдая Рука" },
+    redBR:   { en:"The Lockdown", es:"El Cierre Total", fr:"Le Verrouillage", de:"Der Lockdown", ru:"Тотальный Контроль" }
+  };
+
+  /* Granular description system: each axis-half is split into 4
+     intensity bands, so combining them gives 4x4 = 16 distinct
+     descriptions inside every quadrant (64 across the whole grid). */
+  var PHRASES = {
+    R: { // relaxed side, mild -> extreme
+      en:["Rules lean a little relaxed","Rules are clearly relaxed","Rules are quite loose","There's barely a rule in sight"],
+      es:["Las reglas son un poco relajadas","Las reglas son claramente relajadas","Las reglas son bastante flexibles","Casi no hay ninguna regla"],
+      fr:["Les règles sont un peu souples","Les règles sont clairement souples","Les règles sont assez souples","Il n'y a presque aucune règle"],
+      de:["Die Regeln sind etwas locker","Die Regeln sind eindeutig locker","Die Regeln sind ziemlich locker","Es gibt kaum eine Regel"],
+      ru:["Правила немного мягкие","Правила явно мягкие","Правила довольно свободные","Правил почти нет"]
     },
-    greenTL: {
-      name:{ en:"The Open Door", es:"La Puerta Abierta", fr:"La Porte Ouverte", de:"Die Offene Tür", ru:"Открытая Дверь" },
-      desc:{
-        en:"Relaxed rules and real trust to match.",
-        es:"Reglas relajadas y confianza real de por medio.",
-        fr:"Des règles souples et une vraie confiance.",
-        de:"Lockere Regeln und echtes Vertrauen.",
-        ru:"Мягкие правила и настоящее доверие."
-      }
+    S: { // strict side, mild -> extreme
+      en:["Rules lean a little strict","Rules are clearly strict","Rules are quite firm","Rules are about as strict as it gets"],
+      es:["Las reglas son un poco estrictas","Las reglas son claramente estrictas","Las reglas son bastante firmes","Las reglas son tan estrictas como pueden ser"],
+      fr:["Les règles sont un peu strictes","Les règles sont clairement strictes","Les règles sont assez fermes","Les règles sont aussi strictes que possible"],
+      de:["Die Regeln sind etwas streng","Die Regeln sind eindeutig streng","Die Regeln sind ziemlich streng","Die Regeln sind so streng, wie es nur geht"],
+      ru:["Правила немного строгие","Правила явно строгие","Правила довольно жёсткие","Правила настолько строгие, насколько это возможно"]
     },
-    yellowTR: {
-      name:{ en:"The Worried Ally", es:"El Aliado Preocupado", fr:"L'Allié Inquiet", de:"Der Besorgte Verbündete", ru:"Тревожный Союзник" },
-      desc:{
-        en:"Few rules, but always watched closely.",
-        es:"Pocas reglas, pero siempre vigilado de cerca.",
-        fr:"Peu de règles, mais toujours surveillé de près.",
-        de:"Wenige Regeln, aber immer genau beobachtet.",
-        ru:"Мало правил, но всегда под присмотром."
-      }
+    T: { // trust side, mild -> extreme
+      en:["with a bit more independence than average","with real independence day-to-day","with a lot of freedom to make your own calls","with complete freedom and a lot of trust behind it"],
+      es:["con un poco más de independencia de lo normal","con verdadera independencia en el día a día","con mucha libertad para tomar tus propias decisiones","con libertad total y mucha confianza detrás"],
+      fr:["avec un peu plus d'indépendance que la moyenne","avec une vraie indépendance au quotidien","avec beaucoup de liberté pour prendre tes propres décisions","avec une liberté totale et beaucoup de confiance derrière"],
+      de:["mit etwas mehr Unabhängigkeit als üblich","mit echter Unabhängigkeit im Alltag","mit viel Freiheit, eigene Entscheidungen zu treffen","mit völliger Freiheit und viel Vertrauen dahinter"],
+      ru:["с чуть большей самостоятельностью, чем обычно","с настоящей самостоятельностью в повседневной жизни","с большой свободой принимать решения самостоятельно","с полной свободой и большим доверием"]
     },
-    blueBL: {
-      name:{ en:"The Steady Hand", es:"La Mano Firme", fr:"La Main Ferme", de:"Die Ruhige Hand", ru:"Твёрдая Рука" },
-      desc:{
-        en:"Firm rules, but trusted to follow them.",
-        es:"Reglas firmes, pero con confianza para cumplirlas.",
-        fr:"Des règles fermes, mais la confiance de les suivre.",
-        de:"Feste Regeln, aber Vertrauen, sie einzuhalten.",
-        ru:"Чёткие правила, но доверие их соблюдать."
-      }
-    },
-    redBR: {
-      name:{ en:"The Lockdown", es:"El Cierre Total", fr:"Le Verrouillage", de:"Der Lockdown", ru:"Тотальный Контроль" },
-      desc:{
-        en:"Strict rules, closely enforced.",
-        es:"Reglas estrictas, aplicadas de cerca.",
-        fr:"Des règles strictes, appliquées de près.",
-        de:"Strenge Regeln, streng durchgesetzt.",
-        ru:"Строгие правила под жёстким контролем."
-      }
+    P: { // supervision side, mild -> extreme
+      en:["with slightly more checking-in than average","with regular checking-in","with close, frequent monitoring","with monitoring on almost everything you do"],
+      es:["con un poco más de seguimiento de lo normal","con un seguimiento regular","con un control cercano y frecuente","con vigilancia sobre casi todo lo que haces"],
+      fr:["avec un peu plus de suivi que la moyenne","avec un suivi régulier","avec une surveillance étroite et fréquente","avec une surveillance sur presque tout ce que tu fais"],
+      de:["mit etwas mehr Nachfragen als üblich","mit regelmäßigem Nachfragen","mit enger, häufiger Kontrolle","mit Kontrolle über fast alles, was du tust"],
+      ru:["с чуть более частыми проверками, чем обычно","с регулярными проверками","с плотным и частым контролем","с контролем почти всего, что ты делаешь"]
     }
   };
 
-  /* =========================================================
-     ARCHETYPES — fictional composites, plotted for flavor.
-     ========================================================= */
   var ARCHETYPES = [
     { x:15, y:15, name:{en:"The Roadie's Kid",es:"El Hijo del Roadie",fr:"L'Enfant du Roadie",de:"Das Roadie-Kind",ru:"Ребёнок роуди"},
-      blurb:{
-        en:"Grew up backstage — rules were loose and nobody kept score.",
-        es:"Creció entre bambalinas — las reglas eran flexibles y nadie llevaba la cuenta.",
-        fr:"Grandi dans les coulisses — les règles étaient souples et personne ne comptait.",
-        de:"Backstage aufgewachsen — Regeln waren locker, niemand zählte mit.",
-        ru:"Вырос за кулисами — правила были мягкими, и никто их не считал."
-      }},
+      blurb:{ en:"Grew up backstage — rules were loose and nobody kept score.", es:"Creció entre bambalinas — las reglas eran flexibles y nadie llevaba la cuenta.", fr:"Grandi dans les coulisses — les règles étaient souples et personne ne comptait.", de:"Backstage aufgewachsen — Regeln waren locker, niemand zählte mit.", ru:"Вырос за кулисами — правила были мягкими, и никто их не считал." }},
     { x:25, y:75, name:{en:"The Farm Kid",es:"El Niño de Granja",fr:"L'Enfant de la Ferme",de:"Das Bauernhofkind",ru:"Ребёнок с фермы"},
-      blurb:{
-        en:"Chores were law, but nobody stood over your shoulder doing them.",
-        es:"Las tareas eran ley, pero nadie vigilaba cómo se hacían.",
-        fr:"Les corvées étaient la loi, mais personne ne surveillait comment elles étaient faites.",
-        de:"Hausarbeit war Gesetz, aber niemand stand dabei und kontrollierte.",
-        ru:"Обязанности были законом, но никто не следил, как их выполняют."
-      }},
+      blurb:{ en:"Chores were law, but nobody stood over your shoulder doing them.", es:"Las tareas eran ley, pero nadie vigilaba cómo se hacían.", fr:"Les corvées étaient la loi, mais personne ne surveillait comment elles étaient faites.", de:"Hausarbeit war Gesetz, aber niemand stand dabei und kontrollierte.", ru:"Обязанности были законом, но никто не следил, как их выполняют." }},
     { x:85, y:85, name:{en:"The Astronaut's Kid",es:"El Hijo del Astronauta",fr:"L'Enfant de l'Astronaute",de:"Das Astronautenkind",ru:"Ребёнок космонавта"},
-      blurb:{
-        en:"Every rule came with a checklist, and every checklist got checked.",
-        es:"Cada regla venía con una lista de verificación, y cada lista se revisaba.",
-        fr:"Chaque règle venait avec une checklist, et chaque checklist était vérifiée.",
-        de:"Jede Regel kam mit einer Checkliste, und jede Checkliste wurde geprüft.",
-        ru:"Каждое правило сопровождалось списком, и каждый пункт проверялся."
-      }},
+      blurb:{ en:"Every rule came with a checklist, and every checklist got checked.", es:"Cada regla venía con una lista de verificación, y cada lista se revisaba.", fr:"Chaque règle venait avec une checklist, et chaque checklist était vérifiée.", de:"Jede Regel kam mit einer Checkliste, und jede Checkliste wurde geprüft.", ru:"Каждое правило сопровождалось списком, и каждый пункт проверялся." }},
     { x:80, y:25, name:{en:"The Diplomat's Kid",es:"El Hijo del Diplomático",fr:"L'Enfant du Diplomate",de:"Das Diplomatenkind",ru:"Ребёнок дипломата"},
-      blurb:{
-        en:"Few rules, but someone always knew exactly which country you were in.",
-        es:"Pocas reglas, pero siempre sabían exactamente en qué país estabas.",
-        fr:"Peu de règles, mais on savait toujours exactement dans quel pays tu étais.",
-        de:"Wenige Regeln, aber man wusste immer genau, in welchem Land du warst.",
-        ru:"Мало правил, но всегда точно знали, в какой ты стране."
-      }},
+      blurb:{ en:"Few rules, but someone always knew exactly which country you were in.", es:"Pocas reglas, pero siempre sabían exactamente en qué país estabas.", fr:"Peu de règles, mais on savait toujours exactement dans quel pays tu étais.", de:"Wenige Regeln, aber man wusste immer genau, in welchem Land du warst.", ru:"Мало правил, но всегда точно знали, в какой ты стране." }},
     { x:35, y:80, name:{en:"The Prodigy",es:"El Prodigio",fr:"Le Prodige",de:"Das Wunderkind",ru:"Вундеркинд"},
-      blurb:{
-        en:"Talent was pushed hard, but there was little watching outside of practice.",
-        es:"El talento se exigía al máximo, pero fuera de la práctica casi no había vigilancia.",
-        fr:"Le talent était poussé à fond, mais en dehors de l'entraînement, peu de surveillance.",
-        de:"Talent wurde hart gefördert, aber außerhalb des Trainings kaum kontrolliert.",
-        ru:"Талант развивали жёстко, но вне тренировок почти не следили."
-      }},
+      blurb:{ en:"Talent was pushed hard, but there was little watching outside of practice.", es:"El talento se exigía al máximo, pero fuera de la práctica casi no había vigilancia.", fr:"Le talent était poussé à fond, mais en dehors de l'entraînement, peu de surveillance.", de:"Talent wurde hart gefördert, aber außerhalb des Trainings kaum kontrolliert.", ru:"Талант развивали жёстко, но вне тренировок почти не следили." }},
     { x:90, y:55, name:{en:"The Influencer's Sibling",es:"El Hermano del Influencer",fr:"Le Frère de l'Influenceur",de:"Das Geschwister des Influencers",ru:"Брат/сестра инфлюенсера"},
-      blurb:{
-        en:"Privacy stopped existing once the family had an audience.",
-        es:"La privacidad dejó de existir en cuanto la familia tuvo audiencia.",
-        fr:"La vie privée a cessé d'exister dès que la famille a eu un public.",
-        de:"Privatsphäre gab es nicht mehr, sobald die Familie ein Publikum hatte.",
-        ru:"Личное пространство исчезло, как только у семьи появилась аудитория."
-      }}
+      blurb:{ en:"Family life became pretty public once there was an audience.", es:"La vida familiar se volvió bastante pública en cuanto la familia tuvo audiencia.", fr:"La vie de famille est devenue assez publique dès que la famille a eu un public.", de:"Das Familienleben wurde ziemlich öffentlich, sobald die Familie ein Publikum hatte.", ru:"Семейная жизнь стала довольно публичной, как только у семьи появилась аудитория." }}
   ];
 
-  /* =========================================================
-     STATE
-     ========================================================= */
   var shuffled = [];
   var answers = [];
   var currentIndex = 0;
@@ -910,9 +802,6 @@
     return a;
   }
 
-  /* =========================================================
-     LANGUAGE
-     ========================================================= */
   function applyLanguage(lang){
     currentLang = lang;
     var s = STRINGS[lang];
@@ -928,6 +817,12 @@
     document.getElementById('axis-strict').textContent = s.axisStrict;
     document.getElementById('axis-trust').textContent = s.axisTrust;
     document.getElementById('axis-supervision').textContent = s.axisSuper;
+    document.getElementById('result-explore-hint').textContent = s.exploreHintResult;
+    document.getElementById('result-explore-title').textContent = s.exploreTitle;
+    document.getElementById('archetype-explore-hint').textContent = s.exploreHintArch;
+    document.getElementById('archetype-explore-title').textContent = s.exploreTitle;
+    document.getElementById('archetype-explore-text').textContent = s.exploreDefault;
+    document.getElementById('archetype-note').textContent = s.archNote;
     document.documentElement.lang = lang;
 
     var buttons = document.querySelectorAll('.lang-btn');
@@ -936,11 +831,9 @@
     }
 
     if(screens.quiz.classList.contains('active')){ renderQuestion(); }
+    if(screens.archetypes.classList.contains('active')){ renderArchetypes(); }
   }
 
-  /* =========================================================
-     SCREEN MANAGEMENT
-     ========================================================= */
   var screens = {
     landing: document.getElementById('screen-landing'),
     quiz: document.getElementById('screen-quiz'),
@@ -957,9 +850,6 @@
     window.scrollTo(0,0);
   }
 
-  /* =========================================================
-     QUIZ FLOW
-     ========================================================= */
   function startQuiz(){
     shuffled = shuffle(QUESTIONS);
     answers = new Array(shuffled.length).fill(null);
@@ -1017,14 +907,35 @@
     renderQuestion();
   }
 
-  /* =========================================================
-     RESULT
-     ========================================================= */
+  function describePosition(finalX, finalY){
+    var yPhrase, xPhrase, mag, idx;
+    if(finalY < 50){
+      mag = 50 - finalY;
+      idx = Math.min(3, Math.floor(mag/12.5));
+      yPhrase = PHRASES.R[currentLang][idx];
+    } else {
+      mag = finalY - 50;
+      idx = Math.min(3, Math.floor(mag/12.5));
+      yPhrase = PHRASES.S[currentLang][idx];
+    }
+    if(finalX < 50){
+      mag = 50 - finalX;
+      idx = Math.min(3, Math.floor(mag/12.5));
+      xPhrase = PHRASES.T[currentLang][idx];
+    } else {
+      mag = finalX - 50;
+      idx = Math.min(3, Math.floor(mag/12.5));
+      xPhrase = PHRASES.P[currentLang][idx];
+    }
+    return yPhrase + ', ' + xPhrase + '.';
+  }
+
   function finishQuiz(){
     var scoreS = 0, scoreV = 0;
     shuffled.forEach(function(q, i){
       var level = answers[i] || 0;
-      if(q.axis === "s"){ scoreS += level; } else { scoreV += level; }
+      var eff = q.invert ? -level : level;
+      if(q.axis === "s"){ scoreS += eff; } else { scoreV += eff; }
     });
 
     var rangeS = totalRange.maxS - totalRange.minS;
@@ -1039,6 +950,9 @@
     marker.style.left = finalX + '%';
     marker.style.top = finalY + '%';
 
+    document.getElementById('grid-cell-highlight').style.display = 'none';
+    document.getElementById('result-explore-panel').classList.remove('show');
+
     var dx = finalX - 50;
     var dy = finalY - 50;
     var dist = Math.sqrt(dx*dx + dy*dy);
@@ -1051,9 +965,11 @@
     else { key = 'redBR'; }
 
     var s = STRINGS[currentLang];
-    var result = RESULTS[key];
-    document.getElementById('result-name').textContent = result.name[currentLang];
-    document.getElementById('result-desc').textContent = result.desc[currentLang];
+    var name = RESULT_NAMES[key][currentLang];
+    var desc = describePosition(finalX, finalY);
+
+    document.getElementById('result-name').textContent = name;
+    document.getElementById('result-desc').textContent = desc;
 
     var strictPct = Math.round(finalY);
     var supervisePct = Math.round(finalX);
@@ -1061,20 +977,14 @@
     document.getElementById('stat-supervision').textContent = s.statSuper + ' ' + supervisePct + '%';
 
     window._lastResult = {
-      name: result.name[currentLang],
-      desc: result.desc[currentLang],
-      strictLabel: s.statStrict,
-      superLabel: s.statSuper,
-      strictPct: strictPct,
-      supervisePct: supervisePct
+      name: name, desc: desc,
+      strictLabel: s.statStrict, superLabel: s.statSuper,
+      strictPct: strictPct, supervisePct: supervisePct
     };
 
     showScreen('result');
   }
 
-  /* =========================================================
-     ARCHETYPES SCREEN
-     ========================================================= */
   function renderArchetypes(){
     var grid = document.getElementById('archetype-grid');
     var existingDots = grid.querySelectorAll('.dot');
@@ -1111,9 +1021,6 @@
     });
   }
 
-  /* =========================================================
-     COPY RESULT
-     ========================================================= */
   function copyResult(){
     var r = window._lastResult;
     if(!r) return;
@@ -1157,8 +1064,46 @@
   }
 
   /* =========================================================
-     WIRE UP
+     EXPLORE GRID — click any cell on either grid to see
+     the description for that spot (8x8 = 64 explorable cells).
      ========================================================= */
+  function setupGridExplorer(gridEl, highlightEl, panelEl, textEl){
+    function handlePoint(clientX, clientY){
+      var rect = gridEl.getBoundingClientRect();
+      var relX = ((clientX - rect.left) / rect.width) * 100;
+      var relY = ((clientY - rect.top) / rect.height) * 100;
+      relX = Math.max(0, Math.min(99.9, relX));
+      relY = Math.max(0, Math.min(99.9, relY));
+      var cellX = Math.min(7, Math.floor(relX / 12.5));
+      var cellY = Math.min(7, Math.floor(relY / 12.5));
+      var centerX = cellX * 12.5 + 6.25;
+      var centerY = cellY * 12.5 + 6.25;
+
+      highlightEl.style.left = (cellX * 12.5) + '%';
+      highlightEl.style.top = (cellY * 12.5) + '%';
+      highlightEl.style.display = 'block';
+
+      textEl.textContent = describePosition(centerX, centerY);
+      panelEl.classList.add('show');
+    }
+    gridEl.addEventListener('click', function(e){
+      handlePoint(e.clientX, e.clientY);
+    });
+  }
+
+  setupGridExplorer(
+    document.getElementById('grid-frame'),
+    document.getElementById('grid-cell-highlight'),
+    document.getElementById('result-explore-panel'),
+    document.getElementById('result-explore-text')
+  );
+  setupGridExplorer(
+    document.getElementById('archetype-grid'),
+    document.getElementById('archetype-cell-highlight'),
+    document.getElementById('archetype-explore-panel'),
+    document.getElementById('archetype-explore-text')
+  );
+
   var langButtons = document.querySelectorAll('.lang-btn');
   for(var i=0;i<langButtons.length;i++){
     langButtons[i].addEventListener('click', function(){
